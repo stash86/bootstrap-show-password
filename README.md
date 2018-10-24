@@ -111,6 +111,13 @@ For data attributes, append the option name to `data-`, as in `data-message="Sho
             <td>false</td>
             <td>Puts the open/close class inside the &lt;i>. Use this option with google material icons.</td>
         </tr>
+        <tr>
+            <td>eyeStyle</td>
+            <td>data-eye-style</td>
+            <td>String</td>
+            <td>Empty</td>
+            <td>Adds additional CSS style for the eye icon</td>
+        </tr>
 
     </tbody>
 </table>

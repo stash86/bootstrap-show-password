@@ -50,7 +50,8 @@
         eyeClass: 'fa',
         eyeOpenClass: 'fa-eye',
         eyeCloseClass: 'fa-eye-slash',
-        eyeClassPositionInside: false
+        eyeClassPositionInside: false,
+        eyeStyle: ""
     };
 
     Password.prototype.init = function() {
@@ -83,11 +84,11 @@
             this.$text.prop('readonly', true);
         this.$icon = $([
             '<div class="input-group-append">',
-            '<button tabindex="100" title="' + this.options.message + '" class="btn btn-outline-secondary" type="button">',
+            '<span tabindex="100" title="' + this.options.message + '" style="'+this.options.eyeStyle+'">',
             '<i class="icon-eye-open' + (this.options.white ? ' icon-white' : '') +
                 ' ' + this.options.eyeClass + ' ' + (this.options.eyeClassPositionInside ? '' : this.options.eyeOpenClass) + '">' +
                 (this.options.eyeClassPositionInside ? this.options.eyeOpenClass : '') + '</i>',
-            '</button>',
+            '</span>',
             '</div>'
         ].join(''))[placementFuc](this.$text).css('cursor', 'pointer');
 
@@ -115,12 +116,12 @@
         this.$element.hide();
         this.$text.show();
         if (this.options.eyeClassPositionInside) {
-            this.$icon.find('i')
+            this.$icon.find('[data-fa-i2svg]')
                 .removeClass('icon-eye-open')
                 .addClass('icon-eye-close')
                 .html(this.options.eyeCloseClass);
         } else {
-            this.$icon.find('i')
+            this.$icon.find('[data-fa-i2svg]')
                 .removeClass('icon-eye-open ' + this.options.eyeOpenClass)
                 .addClass('icon-eye-close ' + this.options.eyeCloseClass);
         }
@@ -137,12 +138,12 @@
         this.$element.show();
         this.$text.hide();
         if (this.options.eyeClassPositionInside) {
-            this.$icon.find('i')
+            this.$icon.find('[data-fa-i2svg]')
                 .removeClass('icon-eye-close')
                 .addClass('icon-eye-open')
                 .html(this.options.eyeOpenClass);
         } else {
-            this.$icon.find('i')
+            this.$icon.find('[data-fa-i2svg]')
                 .removeClass('icon-eye-close ' + this.options.eyeCloseClass)
                 .addClass('icon-eye-open ' + this.options.eyeOpenClass);
         }
